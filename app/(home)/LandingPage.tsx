@@ -4,10 +4,12 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LandingData, LandingPageDataType } from "../mock-json/landing-data";
 import { Colors } from "@/constants/Colors";
 import StyledTextInput from "@/components/StyleTextInput";
+import { useNavigation, useRouter } from "expo-router";
 
 export default function LandingPage() {
   const [getLandingData, setLandingData] = useState<LandingPageDataType[]>([]);
-
+  const router = useRouter();
+  
    const setSeachText = useCallback((text: string) => {
      if (text) {
        const filteredData = LandingData.filter((item) =>
@@ -24,8 +26,14 @@ export default function LandingPage() {
   }, []);
 
   const RenderEachItem = ({ item }: { item: LandingPageDataType }) => {
+      
+    const onPressedTopic = ()=> {
+        router.push('/readerwrapper')
+    }
+
     return (
       <Pressable
+        onPress={onPressedTopic}
         style={{
           backgroundColor: Colors.dark.listItemBackColor,
           padding: 15,

@@ -2,7 +2,7 @@ import { Colors } from "@/constants/Colors";
 import { Stack } from "expo-router";
 import React from "react";
 
-export default function HomeLayout() {
+export default function ReaderLayout() {
   return (
     <>
       <Stack
@@ -10,11 +10,10 @@ export default function HomeLayout() {
           headerStyle: {
             backgroundColor: Colors.dark.headerColor,
           },
-          headerTitle: "Home",
+          headerTitle: "Reader",
         }}
       >
         <Stack.Screen name="index" />
-        <Stack.Screen name="readerwrapper" options={{headerShown:false}} />
       </Stack>
     </>
   );

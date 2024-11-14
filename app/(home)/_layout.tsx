@@ -1,11 +1,18 @@
+import { Colors } from "@/constants/Colors";
 import { Stack } from "expo-router";
 import React from "react";
-import { StatusBar } from "react-native";
 
 export default function HomeLayout() {
   return (
     <>
-      <Stack>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: Colors.dark.headerColor,
+          },
+          headerTitle: "Home",
+        }}
+      >
         <Stack.Screen name="index" />
       </Stack>
     </>

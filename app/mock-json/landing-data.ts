@@ -17,6 +17,47 @@ export const LandingData: LandingPageDataType[] = [
   },
   {
     topicName: "React Query",
-    description: "How to make API calls and error handling using the React Query instaed using the Traditional UseEffect and Redux Thunk Store",
+    description:
+      "How to make API calls and error handling using the React Query instaed using the Traditional UseEffect and Redux Thunk Store",
+  },
+  {
+    topicName: "Axios Setup",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Launch Camera And Display",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Context API Setup",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "React Native Bridge",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Display Image",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Load SVG",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Native Animations",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Form Validation",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Use of useCallback",
+    description: "How to do Axios Setup?.",
+  },
+  {
+    topicName: "Use of useMemo",
+    description: "How to do Axios Setup?.",
   },
 ];

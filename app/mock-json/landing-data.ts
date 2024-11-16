@@ -11,6 +11,11 @@ export const LandingData: LandingPageDataType[] = [
       "This topic is about how to setup a basic Zod Schema and use into the Form Validation",
   },
   {
+    topicName: "React Hook Form",
+    description:
+      "This topic is about how to setup a basic Zod Schema and use into the Form Validation",
+  },
+  {
     topicName: "Justand Setup",
     description:
       "This is about what is Justand and how to use it and Why is different from Context API, Redux",

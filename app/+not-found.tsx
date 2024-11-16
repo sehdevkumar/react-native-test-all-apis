@@ -7,7 +7,7 @@ export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
-       <Text>Someting Wrong</Text>
+      <Text>Something Wrong</Text>
     </>
   );
 }

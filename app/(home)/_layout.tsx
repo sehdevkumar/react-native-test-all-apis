@@ -14,7 +14,7 @@ export default function HomeLayout() {
         }}
       >
         <Stack.Screen name="index" />
-        <Stack.Screen name="readerwrapper" options={{headerShown:false}} />
+        <Stack.Screen name="/readerwrapper/[id].tsx" options={{headerShown:false}} />
       </Stack>
     </>
   );

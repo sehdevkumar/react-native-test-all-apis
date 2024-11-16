@@ -11,10 +11,17 @@ export default function HomeLayout() {
             backgroundColor: Colors.dark.headerColor,
           },
           headerTitle: "Home",
+          animation: "none",
         }}
       >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="/readerwrapper/[id].tsx" options={{headerShown:false}} />
+        <Stack.Screen
+          name="index"
+        
+        />
+        <Stack.Screen
+          name="/readerwrapper/[id].tsx"
+          options={{ headerShown: false}}
+        />
       </Stack>
     </>
   );

@@ -124,7 +124,7 @@ These examples demonstrate how Zod enhances validation and type safety for your 
   return (
     <ScrollView
       style={{
-        padding: 10,
+        padding: 15,
         flex: 1,
       }}
     >

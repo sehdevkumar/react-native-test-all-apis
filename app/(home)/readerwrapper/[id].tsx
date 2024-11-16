@@ -1,6 +1,6 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Markdown from "react-native-markdown-display";
-import { ScrollView } from "react-native";
+import { ScrollView, Text } from "react-native";
 import { Colors } from "@/constants/Colors";
 import ZodIntroduction from "../topics/ZodIntroduction";
 import { ReactNode, useEffect, useState } from "react";
@@ -40,11 +40,9 @@ export default function ReaderWrapper() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, backgroundColor: Colors.dark.background }}>
-        <ScrollView>
+        <ScrollView >
           {currentRenderedComponent || (
-            <Markdown>
-              You selected an invalid topic or no topic was provided.
-            </Markdown>
+              <Text style={{color: Colors.dark.text}}>Wrong</Text>
           )}
         </ScrollView>
       </SafeAreaView>

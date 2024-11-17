@@ -6,6 +6,7 @@ import ZodIntroduction from "../topics/ZodIntroduction";
 import { ReactNode, useEffect, useState } from "react";
 import UseReactHookFormLibrary from "../topics/UseReactHookFormLibrary";
 import { useRouteInfo, useSearchParams } from "expo-router/build/hooks";
+import UseContextApiSetup from "../topics/UseContextAPISetup";
 
 export default function ReaderWrapper() {
   const router = useRouteInfo();
@@ -23,6 +24,10 @@ export default function ReaderWrapper() {
     {
       topic: "reacthookform",
       component: <UseReactHookFormLibrary />,
+    },
+    {
+      topic: "contextapisetup",
+      component: <UseContextApiSetup />,
     },
   ];
 

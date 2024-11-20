@@ -32,7 +32,7 @@ export default function ReaderWrapper() {
   ];
 
   useEffect(() => {
-    if (router.params.id) {
+    if (router?.params?.id) {
       const matchingComponent = listOfComponents.find(
         (d) => d.topic.replaceAll(" ", "").toLowerCase() === router.params.id
       );
@@ -40,7 +40,7 @@ export default function ReaderWrapper() {
         matchingComponent ? matchingComponent.component : null
       );
     }
-  }, [router.params.id]);
+  }, [router?.params?.id]);
 
   return (
     <SafeAreaProvider>

@@ -28,8 +28,7 @@ export default function LandingPage() {
   const RenderEachItem = ({ item }: { item: LandingPageDataType }) => {
       
     const onPressedTopic = ()=> {
-      const id = 1
-        router.push(`/readerwrapper/${item.topicName.replaceAll(" ",'').toLowerCase()}`)
+        router.push(`/readerwrapper/${item?.topicName?.replaceAll(" ",'')?.toLowerCase()}`)
     }
 
     return (

@@ -18,10 +18,6 @@ export default function HomeLayout() {
           name="index"
         
         />
-        <Stack.Screen
-          name="/readerwrapper/[id].tsx"
-          options={{ headerShown: false}}
-        />
       </Stack>
     </>
   );

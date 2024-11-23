@@ -1,73 +1,83 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { FlatList, Pressable, Text, TextInput } from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import { LandingData, LandingPageDataType } from "../mock-json/landing-data";
 import { Colors } from "@/constants/Colors";
-import StyledTextInput from "@/components/StyleTextInput";
-import { useNavigation, useRouter } from "expo-router";
+import React, { useEffect, useRef } from "react";
+import {
+  Animated,
+  Image,
+  PixelRatio,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 
-export default function LandingPage() {
-  const [getLandingData, setLandingData] = useState<LandingPageDataType[]>([]);
-  const router = useRouter();
-  
-   const setSeachText = useCallback((text: string) => {
-     if (text) {
-       const filteredData = LandingData.filter((item) =>
-         item.topicName.toLowerCase().includes(text.toLowerCase())
-       );
-       setLandingData(filteredData);
-     } else {
-       setLandingData(LandingData); // Reset to all items if search is cleared
-     }
-   }, []);
-
-  useEffect(() => {
-    setLandingData(LandingData);
-  }, []);
-
-  const RenderEachItem = ({ item }: { item: LandingPageDataType }) => {
-      
-    const onPressedTopic = ()=> {
-        router.push(`/readerwrapper/${item?.topicName?.replaceAll(" ",'')?.toLowerCase()}`)
-    }
-
-    return (
-      <Pressable
-        onPress={onPressedTopic}
-        style={{
-          backgroundColor: Colors.dark.listItemBackColor,
-          padding: 15,
-          marginVertical: 8,
-          borderRadius: 10,
-          shadowColor: "#000",
-          shadowOpacity: 0.8,
-          shadowOffset: { width: 0, height: 4 },
-          shadowRadius: 6,
-          elevation: 3, // For Android shadow
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 18,
-            fontWeight: "600",
-            color: "#333",
-          }}
-        >
-          {item?.topicName}
-        </Text>
-      </Pressable>
-    );
-  };
+const LandingPage = () => {
+  const pixel = PixelRatio.getFontScale();
 
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{flex:1}}>
-        <StyledTextInput onChange={(d) => setSeachText(d as string)} />
-        <FlatList
-          data={getLandingData}
-          renderItem={(d) => <RenderEachItem item={d.item} />}
-        ></FlatList>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Pressable style={[styles.card, { backgroundColor: Colors.dark.tint }]}>
+        <Image
+          source={require("../../assets/images/water.jpg")}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "fill",
+          }}
+        ></Image>
+        <Animated.Text
+          style={[
+            {
+              fontSize: pixel * 20,
+              textAlign: "center",
+            },
+          ]}
+        >
+          Water Tracking
+        </Animated.Text>
+      </Pressable>
+      <Pressable style={[styles.card, { backgroundColor: Colors.dark.tint }]}>
+        <Image
+          source={require("../../assets/images/moods.jpg")}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "fill",
+          }}
+        ></Image>
+        <Animated.Text
+          style={[
+            {
+              fontSize: pixel * 20,
+              textAlign: "center",
+            },
+          ]}
+        >
+          Mood Tracking
+        </Animated.Text>
+      </Pressable>
+    </ScrollView>
   );
-}
+};
+
+export default LandingPage;
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+  card: {
+    width: "100%",
+    height: 200,
+    marginBottom: 16,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 8,
+    overflow: "hidden"
+  },
+});

@@ -12,7 +12,7 @@ export default function HomeLayout() {
             backgroundColor: Colors.dark.headerColor,
           },
           headerTitle: "Home",
-          animation: "none",
+          animation: "slide_from_right",
         }}
       >
         <Stack.Screen name="index" />

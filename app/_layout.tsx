@@ -52,6 +52,7 @@ export default function RootLayout() {
           name="(home)"
           options={{
             headerShown: false,
+            animation: "slide_from_right",
           }}
         />
         <Stack.Screen name="+not-found" />

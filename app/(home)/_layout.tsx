@@ -2,6 +2,7 @@ import { Colors } from "@/constants/Colors";
 import { Stack } from "expo-router";
 import React from "react";
 
+
 export default function HomeLayout() {
   return (
     <>
@@ -14,10 +15,11 @@ export default function HomeLayout() {
           animation: "none",
         }}
       >
-        <Stack.Screen
-          name="index"
-        
-        />
+        <Stack.Screen name="index" />
+
+        <Stack.Screen name="(home)/moodsTracking" />
+
+        <Stack.Screen name="(home)/waterTracking" />
       </Stack>
     </>
   );

@@ -11,8 +11,8 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { FirebaseDB } from "@/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
+import * as eva from "@eva-design/eva";
+import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -33,31 +33,21 @@ export default function RootLayout() {
     return null;
   }
 
-  // Get a list of cities from your database
-   async function tempFunction() {
-    const topicCollection = collection(FirebaseDB, "topics");
-    const topics = await getDocs(topicCollection);
-     const cityList = topics.docs.map((doc) => doc.data());
-    console.log(cityList);
-
-  }
-
-
-  tempFunction()
-
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen
-          name="(home)"
-          options={{
-            headerShown: false,
-            animation: "slide_from_right",
-          }}
-        />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <ApplicationProvider {...eva} theme={eva.dark}>
+        <Stack>
+          <Stack.Screen
+            name="(home)"
+            options={{
+              headerShown: false,
+              animation: "slide_from_right",
+            }}
+          />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+      </ApplicationProvider>
     </ThemeProvider>
   );
 }

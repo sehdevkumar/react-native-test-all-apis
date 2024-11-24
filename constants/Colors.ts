@@ -16,6 +16,7 @@ export const Colors = {
     tabIconSelected: tintColorLight,
     headerColor: "#ffffff",
     listItemBackColor: "#45fede",
+    activeButtonColor: "#0a7ea4",
   },
   dark: {
     text: "#ECEDEE",
@@ -26,5 +27,6 @@ export const Colors = {
     headerColor: "#003e3e",
     tabIconSelected: tintColorDark,
     listItemBackColor: "#45fede",
+    activeButtonColor: "#0a7ea4",
   },
 };
